@@ -1,7 +1,7 @@
 "use strict";
 
 var React = require("react"),
-    TodoStore = require('../stores/network'),
+    TodoStore = require('../stores/todo'),
     Fluxxor = require("fluxxor");
 
 var FluxMixin = Fluxxor.FluxMixin(React),

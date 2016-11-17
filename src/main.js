@@ -1,9 +1,9 @@
 "use strict";
 
 var React = require("react"),
-    Application = require('./network/network'),
-    TodoStore = require('./stores/network'),
-    Actions = require('./actions/network'),
+    Application = require('./todo/todo'),
+    TodoStore = require('./stores/todo'),
+    Actions = require('./actions/todo'),
     Fluxxor = require("fluxxor");
 
 window.React = React;

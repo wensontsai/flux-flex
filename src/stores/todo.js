@@ -1,7 +1,7 @@
 "use strict";
 
 var React = require("react"),
-    Actions = require('../actions/network'),
+    Actions = require('../actions/todo'),
     Fluxxor = require("fluxxor");
 
 var TodoStore = Fluxxor.createStore({

@@ -1,7 +1,7 @@
 # flexin some flux
 
 ```
-gulp
+npm start
 ```
 to build.  that is all.
 
