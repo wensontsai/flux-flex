@@ -5,7 +5,7 @@ var React = require("react"),
     Fluxxor = require("fluxxor");
 
 var TodoStore = Fluxxor.createStore({
-  initialize: function() {
+  initialize() {
     this.todoId = 0;
     this.todos = {};
 
@@ -16,7 +16,7 @@ var TodoStore = Fluxxor.createStore({
     );
   },
 
-  onAddTodo: function(payload) {
+  onAddTodo(payload) {
     var id = this._nextTodoId();
     var todo = {
       id: id,
@@ -27,16 +27,19 @@ var TodoStore = Fluxxor.createStore({
     this.emit("change");
   },
 
-  onToggleTodo: function(payload) {
+  // we can emit more specific change events here
+  // i.e. this.emit("addTodoChange");
+
+  onToggleTodo(payload) {
     var id = payload.id;
     this.todos[id].complete = !this.todos[id].complete;
     this.emit("change");
   },
 
-  onClearTodos: function() {
+  onClearTodos() {
     var todos = this.todos;
 
-    Object.keys(todos).forEach(function(key) {
+    Object.keys(todos).forEac(key) {
       if(todos[key].complete) {
         delete todos[key];
       }
@@ -45,13 +48,13 @@ var TodoStore = Fluxxor.createStore({
     this.emit("change");
   },
 
-  getState: function() {
+  getState() {
     return {
       todos: this.todos
     };
   },
 
-  _nextTodoId: function() {
+  _nextTodoId() {
     return ++this.todoId;
   }
 });

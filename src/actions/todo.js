@@ -11,15 +11,15 @@ var constants = {
 
 
 var actions = {
-  addTodo: function(text) {
+  addTodo(text) {
     this.dispatch(constants.ADD_TODO, {text: text});
   },
 
-  toggleTodo: function(id) {
+  toggleTodo(id) {
     this.dispatch(constants.TOGGLE_TODO, {id: id});
   },
 
-  clearTodos: function() {
+  clearTodos() {
     this.dispatch(constants.CLEAR_TODOS);
   }
 };

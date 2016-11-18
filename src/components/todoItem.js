@@ -15,7 +15,7 @@ var TodoItem = React.createClass({
     todo: React.PropTypes.object.isRequired
   },
 
-  render: function() {
+  render() {
     var style = {
       textDecoration: this.props.todo.complete ? "line-through" : ""
     };
@@ -23,7 +23,7 @@ var TodoItem = React.createClass({
     return <span style={style} onClick={this.onClick}>{this.props.todo.text}</span>;
   },
 
-  onClick: function() {
+  onClick() {
     this.getFlux().actions.toggleTodo(this.props.todo.id);
   }
 });
