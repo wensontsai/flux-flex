@@ -7,7 +7,9 @@ var React = require("react"),
 var FluxMixin = Fluxxor.FluxMixin(React),
     StoreWatchMixin = Fluxxor.StoreWatchMixin;
 
-var Application = React.createClass({
+var TodoItem = require('./todoItem');
+
+var TodoApp = React.createClass({
   mixins: [FluxMixin, StoreWatchMixin("TodoStore")],
 
   getInitialState: function() {
@@ -64,24 +66,4 @@ var Application = React.createClass({
   }
 });
 
-var TodoItem = React.createClass({
-  mixins: [FluxMixin],
-
-  propTypes: {
-    todo: React.PropTypes.object.isRequired
-  },
-
-  render: function() {
-    var style = {
-      textDecoration: this.props.todo.complete ? "line-through" : ""
-    };
-
-    return <span style={style} onClick={this.onClick}>{this.props.todo.text}</span>;
-  },
-
-  onClick: function() {
-    this.getFlux().actions.toggleTodo(this.props.todo.id);
-  }
-});
-
-module.exports = Application;
+module.exports = TodoApp;
